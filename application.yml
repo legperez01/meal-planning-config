@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:mysql://mysql:3306/food?useSSL=false
     username: mysql
-    password: musql
+    password: mysql
   jpa:
     properties:
       hibernate:
