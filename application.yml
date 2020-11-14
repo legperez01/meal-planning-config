@@ -15,7 +15,7 @@ spring:
       ddl-auto: none
               
 management:
-	endpoints:
-		web:
-			exposure:
+  endpoints:
+    web:
+      exposure:
         include: *
