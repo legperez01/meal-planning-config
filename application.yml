@@ -3,7 +3,7 @@ server:
   
 spring:
   datasource:
-    url: jdbc:mysql://meal-planning.ctxylira6wvb.us-east-2.rds.amazonaws.com:3306/food?useSSL=false
+    url: jdbc:mysql://localhost:3306/food?useSSL=false
     username: mysql
     password: mysql
   jpa:
