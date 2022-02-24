@@ -14,10 +14,6 @@ spring:
         type: trace
     hibernate:
       ddl-auto: none
-
-  data:
-    rest:
-      basePath: /api
               
 management:
   endpoints:
@@ -29,4 +25,8 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_URL:http://discovery-server:8761}/eureka
-    
+  
+logging.level:
+  org.springframework.cloud.gateway: DEBUG
+  org.springframework.security: DEBUG
+  org.springframework.web.reactive.function.client: TRACE
