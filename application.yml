@@ -6,8 +6,8 @@ management:
         include: "*"
 
 eureka:
-#   instance:
-#     hostname: discovery-server
+  instance:
+    prefer-ip-address: true
   client:
     serviceUrl:
       defaultZone: ${EUREKA_URL:http://discovery-server:8761}/eureka
