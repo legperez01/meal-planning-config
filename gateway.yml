@@ -1,0 +1,32 @@
+spring:
+  session:
+    store-type: redis
+  redis:
+    host: redis
+    port: 6379
+  security:
+      oauth2:
+        client:
+          registration:
+            keycloak:
+              client-id: food
+              client-secret: nUNjOiac04AYKI9VUagRakCMpHKsbzHk
+              client-name: Keycloak
+              scope: openid,profile,email
+          provider:
+            keycloak:
+              issuer-uri: ${KEYCLOAK_URL:http://keycloak:8080}/auth/realms/food
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      foodService:
+        slidingWindowSize: 10
+        permitterNumberOfCallsInHalfOpenState: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10000
+        registerHealthIndicator: true
+  timelimiter:
+    instances:
+      foodService:
+        timeoutDuration: 2s
