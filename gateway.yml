@@ -15,7 +15,7 @@ spring:
               scope: openid,profile,email
           provider:
             keycloak:
-              issuer-uri: ${KEYCLOAK_URL:http://keycloak:8080}/auth/realms/food
+              issuer-uri: ${KEYCLOAK_URL:http://localhost:8080}/auth/realms/food
 
 resilience4j:
   circuitbreaker:
