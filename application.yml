@@ -9,6 +9,8 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_URL:http://discovery-server:8761}/eureka
+    register-with-eureka: true
+    fetch-registry: true
   
 logging.level:
   com:
