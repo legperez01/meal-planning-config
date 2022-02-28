@@ -14,11 +14,11 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
   
-# logging.level:
-#   com:
-#       netflix:
-#         eureka: off
-#         discovery: off
+logging.level:
+  com:
+      netflix:
+        eureka: off
+        discovery: off
   org:
     springframework:
       cloud:
