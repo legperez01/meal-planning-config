@@ -16,6 +16,28 @@ spring:
           provider:
             keycloak:
               issuer-uri: ${KEYCLOAK_URL:http://keycloak:8080}/auth/realms/food
+  cloud:
+    gateway:
+      default-filters:
+        - TokenRelay
+        - RemoveRequestHeader=Cookie
+      routes:
+        - id: food-service
+          uri: lb://food-service
+          predicates:
+            - Path=/api/foods/**
+          filters:
+            - name: Retry
+              args:
+                retries: 3
+                methods: GET
+                backoff:
+                  firstBackoff: 50ms
+                  maxBackoff: 500ms
+            - name: CircuitBreaker
+              args:
+                name: foodService
+                fallbackUri: forward:/foods-fallback
 
 resilience4j:
   circuitbreaker:
