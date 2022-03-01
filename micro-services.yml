@@ -1,5 +1,0 @@
-security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: ${KEYCLOAK_URL:http://keycloak:8080}/auth/realms/food
