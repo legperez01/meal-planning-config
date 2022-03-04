@@ -38,6 +38,7 @@ spring:
               args:
                 name: foodService
                 fallbackUri: forward:/foods-fallback
+        
         - id: meal-service
           uri: lb://meal-service
           predicates:
@@ -55,6 +56,23 @@ spring:
                 name: mealService
                 fallbackUri: forward:/meals-fallback        
 
+        - id: diet-service
+            uri: lb://diet-service
+            predicates:
+              - Path=/api/diets/**
+            filters:
+              - name: Retry
+                args:
+                  retries: 3
+                  methods: GET
+                  backoff:
+                    firstBackoff: 50ms
+                    maxBackoff: 500ms
+              - name: CircuitBreaker
+                args:
+                  name: dietService
+                  fallbackUri: forward:/fallback
+                  
 resilience4j:
   circuitbreaker:
     instances:
