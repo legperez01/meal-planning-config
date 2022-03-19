@@ -55,3 +55,7 @@ spring:
         type: trace
     hibernate:
       ddl-auto: none         
+
+logging:
+  file:
+    path: logs
