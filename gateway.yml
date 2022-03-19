@@ -86,3 +86,7 @@ resilience4j:
     instances:
       foodService:
         timeoutDuration: 2s
+
+logging:
+  file:
+    path: logs
