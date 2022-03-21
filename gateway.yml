@@ -2,7 +2,7 @@ spring:
   session:
     store-type: redis
   redis:
-    host: redis
+    host: ${REDIS_HOST:localhost}
     port: 6379
   security:
       oauth2:
@@ -15,7 +15,7 @@ spring:
               scope: openid,profile,email
           provider:
             keycloak:
-              issuer-uri: ${KEYCLOAK_URL:http://keycloak:8080}/auth/realms/food
+              issuer-uri: ${KEYCLOAK_URL:http://localhost:8080}/auth/realms/food
   cloud:
     gateway:
       default-filters:
