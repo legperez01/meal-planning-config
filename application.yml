@@ -42,7 +42,7 @@ spring:
     activate:
       on-profile: mysql
   datasource:
-    url: jdbc:mysql://mysql/food?allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://${MYSQL_HOST:localhost}/food?allowPublicKeyRetrieval=true&useSSL=false
     username: mysql
     password: mysql
   jpa:
