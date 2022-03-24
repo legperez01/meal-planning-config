@@ -67,7 +67,7 @@ spring:
     activate:
       on-profile: r2dbc
   r2dbc:
-    url: jdbc:mysql://${MYSQL_HOST:localhost}/food?allowPublicKeyRetrieval=true&useSSL=false
+    url: r2dbc:mysql://${MYSQL_HOST:localhost}/food?allowPublicKeyRetrieval=true&useSSL=false
     username: mysql
     password: mysql
 
