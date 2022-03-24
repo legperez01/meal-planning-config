@@ -59,3 +59,20 @@ spring:
 logging:
   file:
     path: logs
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: r2dbc
+  r2dbc:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}/food?allowPublicKeyRetrieval=true&useSSL=false
+    username: mysql
+    password: mysql
+
+logging:
+  level: 
+    org: 
+      springframework: 
+        r2dbc: DEBUG
