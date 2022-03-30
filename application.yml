@@ -68,6 +68,8 @@ spring:
       on-profile: mongo
   data:
     mongodb:
+      user: root
+      password: root
       database: food
       host: localhost
       port: 27017
