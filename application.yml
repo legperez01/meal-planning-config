@@ -65,11 +65,12 @@ logging:
 spring:
   config:
     activate:
-      on-profile: r2dbc
-  r2dbc:
-    url: r2dbc:mysql://${MYSQL_HOST:localhost}/food?allowPublicKeyRetrieval=true&useSSL=false
-    username: mysql
-    password: mysql
+      on-profile: mongo
+  data:
+    mongodb:
+      database: food
+      host: localhost
+      port: 27017
 
 logging:
   level: 
