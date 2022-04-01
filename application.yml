@@ -80,6 +80,4 @@ logging:
     org:
       springframework:
         data:
-          mongodb:
-            core:
-              MongoTemplate: DEBUG
+          mongodb: DEBUG
