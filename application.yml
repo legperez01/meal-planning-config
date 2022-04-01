@@ -68,14 +68,18 @@ spring:
       on-profile: mongo
   data:
     mongodb:
-      user: root
+      authentication-database: admin
+      username: root
       password: root
-      database: food
-      host: localhost
+      database: meal
       port: 27017
+      host: ${MONGO_HOST:localhost}
 
 logging:
-  level: 
-    org: 
-      springframework: 
-        r2dbc: DEBUG
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG
