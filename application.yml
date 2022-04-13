@@ -71,7 +71,7 @@ spring:
       authentication-database: admin
       username: root
       password: root
-      database: meal
+      database: ${MONGO_DATABASE:meal}
       port: 27017
       host: ${MONGO_HOST:localhost}
 
