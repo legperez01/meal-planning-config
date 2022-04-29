@@ -15,7 +15,7 @@ spring:
               scope: openid,profile,email
           provider:
             keycloak:
-              issuer-uri: http://${KEYCLOAK_URL:localhost}:8080/auth/realms/food
+              issuer-uri: http://${KEYCLOAK_URL:localhost}:80/auth/realms/food
   cloud:
     gateway:
       default-filters:
