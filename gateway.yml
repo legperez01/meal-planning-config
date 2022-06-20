@@ -11,7 +11,7 @@ spring:
           registration:
             keycloak:
               client-id: food
-              client-secret: nUNjOiac04AYKI9VUagRakCMpHKsbzHk
+              client-secret: z5kQgfpuVQK6Nndg1tFcsWpx8AS4Lglg
               client-name: Keycloak
               scope: openid,profile,email
           provider:
