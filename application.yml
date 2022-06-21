@@ -34,32 +34,8 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://${KEYCLOAK_URL:localhost:8080}/auth/realms/food
+          issuer-uri: http://${KEYCLOAK_URL:localhost}:8080/auth/realms/food
           
----
-spring:
-  config:
-    activate:
-      on-profile: mysql
-  datasource:
-    url: jdbc:mysql://${MYSQL_HOST:localhost}/food?allowPublicKeyRetrieval=true&useSSL=false
-    username: mysql
-    password: mysql
-  jpa:
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
-        show_sql: true
-        use_sql_comments: true
-        format_sql: true
-        type: trace
-    hibernate:
-      ddl-auto: none         
-
-logging:
-  file:
-    path: logs
-
 
 ---
 spring:
