@@ -23,6 +23,10 @@ logging.level:
     springframework:
       cloud:
         gateway: DEBUG
+          httpclient:
+            wiretap: true
+          httpserver:
+            wiretap: true
       security: DEBUG
       web:
         reactive:
