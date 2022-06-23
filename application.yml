@@ -22,7 +22,7 @@ logging.level:
   org:
     springframework:
       cloud:
-        gateway: DEBUG
+        gateway: off
       security: DEBUG
       web:
         reactive:
