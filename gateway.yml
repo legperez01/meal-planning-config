@@ -1,6 +1,5 @@
 spring:
   session:
-
     store-type: redis
   redis:
     host: ${REDIS_HOST:localhost}
@@ -12,7 +11,7 @@ spring:
           registration:
             keycloak:
               client-id: food
-              client-secret: 7aGfxewp0OfZsyDRavWCMjLvsCQyfzfe
+              client-secret: 2eCfywGPCdmXJeqJSCKDitVABM6WH7Lf
               client-name: Keycloak
               scope: openid,profile,email
           provider:
