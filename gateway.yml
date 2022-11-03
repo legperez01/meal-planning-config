@@ -1,5 +1,6 @@
 spring:
   session:
+
     store-type: redis
   redis:
     host: ${REDIS_HOST:localhost}
@@ -21,6 +22,7 @@ spring:
     gateway:
       default-filters:
         - TokenRelay
+        - SaveSession
         - RemoveRequestHeader=Cookie
       routes:
         - id: food-service
