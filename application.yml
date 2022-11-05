@@ -47,7 +47,7 @@ spring:
     mongodb:
       authentication-database: admin
       username: root
-      password: root
+      password: 34zsPolZVH
       database: ${MONGO_DATABASE:meal}
       port: 27017
       host: ${MONGO_HOST:localhost}
