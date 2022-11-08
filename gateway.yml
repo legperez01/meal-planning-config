@@ -19,6 +19,11 @@ spring:
               issuer-uri: http://${KEYCLOAK_URL:localhost:8080}/realms/food
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "https://192.168.49.2:31000"
+
       default-filters:
         - TokenRelay
         - SaveSession
