@@ -22,7 +22,7 @@ spring:
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins: "https://192.168.49.2:31000"
+            allowedOrigins: "http://gateway.fitworld.com"
 
       default-filters:
         - TokenRelay
