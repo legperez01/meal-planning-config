@@ -4,6 +4,10 @@ management:
     web:
       exposure:
         include: "*"
+    health:
+      show-details: always
+      probes:
+        enable: true
 
 eureka:
   instance:
@@ -31,6 +35,8 @@ logging.level:
             client: TRACE
 
 spring:
+  lifecycle:
+    timeout-per-shutdown-phase: "30s"
   security:
     oauth2:
       resourceserver:
