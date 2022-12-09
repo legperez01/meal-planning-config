@@ -55,26 +55,3 @@ spring:
       database: ${MONGO_DATABASE:meal}
       port: 27017
       host: ${MONGO_HOST:localhost}
-
----
-spring:
-  config:
-    activate:
-      on-profile: mongo
-  data:
-    mongodb:
-      authentication-database: admin
-      username: root
-      password: 34zsPolZVH
-      database: ${MONGO_DATABASE:meal}
-      port: 27017
-      host: ${MONGO_HOST:localhost}
-
-logging:
-  pattern:
-    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
-  level:
-    org:
-      springframework:
-        data:
-          mongodb: DEBUG
