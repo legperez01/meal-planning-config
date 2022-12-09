@@ -19,20 +19,25 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
   
-logging.level:
-  com:
-      netflix:
-        eureka: off
-        discovery: off
-  org:
-    springframework:
-      cloud:
-        gateway: off
-      security: DEBUG
-      web:
-        reactive:
-          function:
-            client: TRACE
+logging:
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
+  level:
+    com:
+        netflix:
+          eureka: off
+          discovery: off
+    org:
+      springframework:
+        cloud:
+          gateway: off
+        data:
+          mongodb: DEBUG
+        security: DEBUG
+        web:
+          reactive:
+            function:
+              client: TRACE
 
 spring:
   lifecycle:
@@ -42,7 +47,14 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: http://${KEYCLOAK_URL:localhost:8080}/realms/food
-          
+  data:
+    mongodb:
+      authentication-database: admin
+      username: root
+      password: 34zsPolZVH
+      database: ${MONGO_DATABASE:meal}
+      port: 27017
+      host: ${MONGO_HOST:localhost}
 
 ---
 spring:
